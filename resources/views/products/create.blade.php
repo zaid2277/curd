@@ -20,12 +20,12 @@
         <form action="{{ route('products.store') }}" method="post">
           @csrf
           <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
+            <label for="title">product</label>
+            <input type="text" class="form-control" id="product" name="product" required>
           </div>
           <div class="form-group">
-            <label for="body">Body</label>
-            <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+            <label for="body">descrip</label>
+            <textarea class="form-control" id="descrp" name="descrp" rows="2" required></textarea>
           </div>
           <br>
           <button type="submit" class="btn btn-primary">Create</button>

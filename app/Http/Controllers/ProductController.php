@@ -29,7 +29,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'product' => 'required|max:255',
+            'descrp' => 'required',
+          ]);
+          Product::create($request->all());
+          return redirect()->route('products.index')
+            ->with('success', 'Product created success.');
     }
 
     /**

@@ -30,7 +30,7 @@
                                             <th>#</th>
                                             <th>product</th>
                                             <th>descrp</th>
-                                            <th>#</th>
+                                            <th>pr</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,7 +39,7 @@
                                                 <td>{{ $loop->index + 1 }}</td>
                                                 <td>{{ $product->product }}</td>
                                                 <td>{{ $product->descrp }}</td>
-                                            <tr>
+
                                                 <td>
                                                     <div class="dropdown show">
                                                         <a class="btn btn-success btn-sm dropdown-toggle" href="#"
@@ -49,24 +49,25 @@
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                             <a class="dropdown-item"
-                                                                href="{{ route('products.show', $produc->id) }}"><i
+                                                                href="{{ route('products.show', $product->id) }}"><i
                                                                     style="color: #ffc107"
                                                                     class="far fa-eye "></i>&nbsp; show</a>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('products.edit', $produc->id) }}"><i
+                                                                href="{{ route('products.edit', $product->id) }}"><i
                                                                     style="color:green" class="fa fa-edit"></i>&nbsp;
                                                                 edit</a>
                                                             <a class="dropdown-item"
-                                                                data-target="#Delete_Student{{ $produc->id }}"
+                                                                data-target="#Delete_Student{{ $product->id }}"
                                                                 data-toggle="modal"
-                                                                href="##Delete_Student{{ $student->id }}"><i
+                                                                href="##Delete_Student{{ $product->id }}"><i
                                                                     style="color: red" class="fa fa-trash"></i>&nbsp;
                                                                 delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            @include('pages.products.Delete')
+                                        </tr>
+
                                         @endforeach
                                 </table>
                             </div>
