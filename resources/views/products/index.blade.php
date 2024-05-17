@@ -56,12 +56,13 @@
                                                                 href="{{ route('products.edit', $product->id) }}"><i
                                                                     style="color:green" class="fa fa-edit"></i>&nbsp;
                                                                 edit</a>
-                                                            <a class="dropdown-item"
-                                                                data-target="#Delete_Student{{ $product->id }}"
-                                                                data-toggle="modal"
-                                                                href="##Delete_Student{{ $product->id }}"><i
-                                                                    style="color: red" class="fa fa-trash"></i>&nbsp;
-                                                                delete</a>
+                                                                <div class="col-sm">
+                                                                    <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                                                                      @csrf
+                                                                      @method('DELETE')
+                                                                      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                                    </form>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </td>
