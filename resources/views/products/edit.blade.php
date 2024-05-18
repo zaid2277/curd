@@ -26,7 +26,7 @@
           </div>
           <div class="form-group">
             <label for="body">descrip</label>
-            <textarea class="form-control" id="descrp" name="descrp" rows="2" value="{{ $product->descrp }}" required></textarea>
+            <textarea class="form-control" id="descrp" name="descrp" rows="2"  required>{{ $product->descrp }}</textarea>
           </div>
           <br>
           <button type="submit" class="btn btn-primary">update</button>
