@@ -52,7 +52,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::find($id);
+    return view('products.edit', compact('product'));
     }
 
     /**
@@ -60,7 +61,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'product' => 'required|max:255',
+            'descrp' => 'required',
+          ]);
+          $product = Product::find($id);
+          $product->update($request->all());
+          return redirect()->route('products.index')
+            ->with('success', 'Product created success.');
     }
 
     /**
